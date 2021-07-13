@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Button, TextInput, Title } from 'react-native-paper';
+import { View, StyleSheet, Button, TextInput  } from 'react-native';
 
 const LoginForm = () => {
 	const [login, setLogin] = useState('');
@@ -12,7 +11,6 @@ const LoginForm = () => {
 
 	return (
 		<View>
-			<Title style={styles.text}>Title</Title>
 			<View style={styles.inputContainerStyle}>
 				<TextInput
 					label="Enter username"
@@ -32,9 +30,7 @@ const LoginForm = () => {
 				/>
 			</View>
 			<View>
-				<Button mode="contained" onPress={clickHandler} style={styles.button}>
-					Default
-				</Button>
+				<Button onPress={clickHandler} style={styles.button} title="button" />
 			</View>
 		</View>
 	);

@@ -1,11 +1,15 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Text } from 'react-native-paper';
+import { View, Text, Button } from 'react-native';
+import {authServices} from '../../services/authServices';
 
 import LoginForm from '../forms/LoginForm';
-import { StatusBar } from 'expo-status-bar';
 
-const Main = () => {
+const Main = ({navigation}) => {
+	const googleAuth = () => {
+		console.log('google auth')
+		const response = authServices.googleAuth();
+		console.log(response)
+	}
 	return (
 		<View>
 			<LoginForm />
@@ -14,7 +18,7 @@ const Main = () => {
 					или войти с помощью
 				</Text>
 			</View>
-			<StatusBar style='auto'/>
+			<Button onPress={googleAuth} title="with google" />
 		</View>
 	);
 };
